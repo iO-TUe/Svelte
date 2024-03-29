@@ -15,7 +15,7 @@
         if (count < 100) count++;
     }
 
-    console.log("Script: Counter");
+    // console.log("Script: Counter");
 
     async function celebrate() {
         const defaults = {
@@ -71,7 +71,7 @@
     }
 </script>
 
-{console.log("Render: Counter") ?? ""}
+<!-- {console.log("Render: Counter") ?? ""} -->
 <div class="wrapper">
     <Button disabled={count === 0} fn={subtract} sign="-" />
     <Gauge value={count} recurse={false} />

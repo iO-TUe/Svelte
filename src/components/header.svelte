@@ -1,8 +1,8 @@
 <script lang="ts">
-    console.log("Script: Header");
+    // console.log("Script: Header");
 </script>
 
-{console.log("Render: Header") ?? ""}
+<!-- {console.log("Render: Header") ?? ""} -->
 <nav class="App-navbar">
     <svg
         class="App-logo"

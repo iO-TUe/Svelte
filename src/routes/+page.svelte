@@ -2,11 +2,11 @@
     import Counter from "../components/Counter.svelte";
     import Header from "../components/header.svelte";
 
-    console.log("Script: App");
+    // console.log("Script: App");
 </script>
 
 <div class="App">
-    {console.log("Render: App") ?? ""}
+    <!-- {console.log("Render: App") ?? ""} -->
     <Header />
     <main class="App-main">
         <Counter initialValue={95} />

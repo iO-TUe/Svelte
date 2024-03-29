@@ -3,10 +3,10 @@
     export let fn: Function;
     export let sign: string;
 
-    console.log(`Script: "${sign}" button`);
+    // console.log(`Script: "${sign}" button`);
 </script>
 
-{console.log(`Render: "${sign}" Button`) ?? ""}
+<!-- {console.log(`Render: "${sign}" Button`) ?? ""} -->
 <button class="button" {disabled} on:click={fn()} aria-label={sign}>
     {sign}
 </button>

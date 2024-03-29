@@ -5,11 +5,11 @@
     export let recurse: boolean;
 
     let bool = false;
-    console.log("Script: Gauge");
+    // console.log("Script: Gauge");
     setTimeout(() => (bool = recurse), 0);
 </script>
 
-{console.log("Render: Gauge") ?? ""}
+<!-- {console.log("Render: Gauge") ?? ""} -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <div role="feed" class="wrapper" on:click={() => (bool = true)}>
@@ -44,8 +44,8 @@
 
 {#if bool && value < 100}
     <div class="recurse">
-        <Gauge {value} recurse={true} />
-        <Gauge {value} recurse={true} />
+        <Gauge {value + 1} recurse={true} />
+        <Gauge {value + 5} recurse={true} />
     </div>
 {/if}
 
