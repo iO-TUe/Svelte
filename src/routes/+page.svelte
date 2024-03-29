@@ -1,10 +1,13 @@
 <script lang="ts">
     import Counter from "../components/Counter.svelte";
     import Header from "../components/header.svelte";
+
+    export const prerender = true;
+    
     console.log("Script: App");
 </script>
 
-<div class="app">
+<div class="App">
     {console.log("Render: App") ?? ""}
     <Header />
     <main class="App-main">
@@ -26,9 +29,5 @@
         justify-content: center;
         font-size: calc(10px + 2vmin);
         color: white;
-    }
-
-    .App-link {
-        color: #61dafb;
     }
 </style>

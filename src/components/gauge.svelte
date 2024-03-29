@@ -10,7 +10,6 @@
 </script>
 
 {console.log("Render: Gauge") ?? ""}
-<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <div role="feed" class="wrapper" on:click={() => (bool = true)}>
     <svg viewBox="0 0 120 120" class="gauge">
         <defs>
