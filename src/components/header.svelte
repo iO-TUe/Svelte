@@ -24,7 +24,6 @@
 <style>
     .App-navbar {
         padding: 30px 40px;
-        text-align: right;
         background-color: var(--main-background);
     }
 
