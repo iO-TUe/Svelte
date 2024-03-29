@@ -2,8 +2,6 @@
     import Counter from "../components/Counter.svelte";
     import Header from "../components/header.svelte";
 
-    export const prerender = true;
-    
     console.log("Script: App");
 </script>
 
