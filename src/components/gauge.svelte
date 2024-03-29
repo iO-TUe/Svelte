@@ -42,10 +42,10 @@
     <span class="value">{value}</span>
 </div>
 
-{#if bool && value < 120}
+{#if bool && value < 100}
     <div class="recurse">
-        <Gauge value={value + 1} recurse={true} />
-        <Gauge value={value + 5} recurse={true} />
+        <Gauge {value} recurse={true} />
+        <Gauge {value} recurse={true} />
     </div>
 {/if}
 
