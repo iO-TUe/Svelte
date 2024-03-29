@@ -35,11 +35,8 @@
             cx="60"
             cy="60"
             stroke-width="8"
-            style={`transform: rotate(-87.9537deg);
-                stroke-dasharray: ${
-                    value * 3.51
-                }, 351.858; fill:none; transform-origin:50%
-                50%; stroke-linecap:round; stroke:url(#gradient)`}
+            class="stroke"
+            style={`stroke-dasharray: ${value * 3.51}, 351.858;`}
         ></circle>
     </svg>
     <span class="value">{value}</span>
