@@ -44,8 +44,8 @@
 
 {#if bool && value < 100}
     <div class="recurse">
-        <Gauge {value + 1} recurse={true} />
-        <Gauge {value + 5} recurse={true} />
+        <Gauge value={value + 1} recurse={true} />
+        <Gauge value={value + 5} recurse={true} />
     </div>
 {/if}
 

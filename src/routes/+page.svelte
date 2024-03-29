@@ -14,10 +14,6 @@
 </div>
 
 <style>
-    .App {
-        text-align: center;
-    }
-
     .App-main {
         background-color: var(--main-background);
         height: calc(100vh - 114px);
