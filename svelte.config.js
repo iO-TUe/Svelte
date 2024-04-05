@@ -7,6 +7,9 @@ export default {
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 	kit: {
+		alias: {
+			'~/*': "./src/components/*"
+		},
 		adapter: adapter()
 	},
 	onwarn: (warning, handler) => {

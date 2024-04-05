@@ -2,6 +2,7 @@
     import Gauge from "./gauge.svelte";
 
     export let value: number;
+    export let max: number;
     export let recurse: boolean;
 
     let bool = false;
@@ -42,10 +43,10 @@
     <span class="value">{value}</span>
 </div>
 
-{#if bool && value < 100}
+{#if bool && max > 0}
     <div class="recurse">
-        <Gauge value={value + 1} recurse={true} />
-        <Gauge value={value + 5} recurse={true} />
+        <Gauge value={value + 1} max={max - 1} recurse={true} />
+        <Gauge value={value - 1} max={max -1} recurse={true} />
     </div>
 {/if}
 
