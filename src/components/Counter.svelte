@@ -39,7 +39,7 @@
         gap: 20px;
     }
 
-    .counters:has(:global(.recurse)) {
+    .counters:has(.recurse) {
         display:flex;
         align-items: center;
     }
