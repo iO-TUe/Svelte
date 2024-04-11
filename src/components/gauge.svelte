@@ -4,8 +4,7 @@
     export let value: number;
     export let max: number;
     export let recurse: boolean;
-    export let fn: Function | undefined = undefined;
-
+    export let fn: (() => void) | undefined = undefined;
     let bool = false;
     // console.log("Script: Gauge");
     setTimeout(() => (bool = recurse), 0);
