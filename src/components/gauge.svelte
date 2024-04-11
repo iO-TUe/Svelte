@@ -4,6 +4,7 @@
     export let value: number;
     export let max: number;
     export let recurse: boolean;
+    export let fn: Function | undefined = undefined;
 
     let bool = false;
     // console.log("Script: Gauge");
@@ -13,7 +14,7 @@
 <!-- {console.log("Render: Gauge") ?? ""} -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<div role="feed" class="wrapper" on:click={() => (bool = true)}>
+<div role="feed" class="wrapper" on:click={() => (fn ? fn() : (bool = true))}>
     <svg viewBox="0 0 120 120" class="gauge">
         <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -46,7 +47,7 @@
 {#if bool && max > 0}
     <div class="recurse">
         <Gauge value={value + 1} max={max - 1} recurse={true} />
-        <Gauge value={value - 1} max={max -1} recurse={true} />
+        <Gauge value={value - 1} max={max - 1} recurse={true} />
     </div>
 {/if}
 
