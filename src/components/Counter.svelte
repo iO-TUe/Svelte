@@ -24,12 +24,7 @@
     <Button disabled={count === 0} fn={subtract} sign="-" />
     <div class="counters">
         {#each { length: recurse ? 1 : maxValue } as _, idx (idx)}
-            <Gauge
-                value={count}
-                max={maxValue}
-                recurse={false}
-                fn={() => idx}
-            />
+            <Gauge value={count} max={maxValue} recurse={false} />
         {/each}
     </div>
     <Button disabled={count === 100} fn={add} sign="+" />
