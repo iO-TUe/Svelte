@@ -1,12 +1,24 @@
 {
-  "hosting": {
-    "site": "io-svelte",
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "cleanUrls": true
-  }
+  "hosting": [ {
+      "site": "io-svelte",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true
+    }, {
+      "site": "io-tue",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [ {
+          "source": "*",
+          "destination": "/index.html"
+        } ]
+    } ]
 }

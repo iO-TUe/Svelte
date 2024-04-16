@@ -7,6 +7,9 @@
       "hosting": {
         "Svelte": [
           "io-svelte"
+        ],
+        "io-tue": [
+          "io-tue"
         ]
       }
     }

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import Counter from "~/counter.svelte";
     import Header from "~/header.svelte";
     import Item from "~/item.svelte";
@@ -6,6 +7,11 @@
     let id = 0;
     let items: { id: number; text: string }[] = [];
     let input = "";
+    let i: HTMLInputElement;
+
+    onMount(() => {
+        i!.disabled = false;
+    });
 
     function addItem({ key }: KeyboardEvent) {
         if (key === "Enter" && input) {
@@ -29,7 +35,13 @@
         <section id="todo">
             <label>
                 <h2>Add new item</h2>
-                <input id="input" bind:value={input} on:keyup={addItem} />
+                <input
+                    disabled
+                    id="input"
+                    bind:this={i}
+                    bind:value={input}
+                    on:keyup={addItem}
+                />
             </label>
             <ul class="list">
                 {#each items as item (item.id)}
