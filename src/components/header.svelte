@@ -7,8 +7,6 @@
     <svg
         class="App-logo"
         xmlns="http://www.w3.org/2000/svg"
-        width="107"
-        height="128"
         viewBox="0 0 107 128"
     >
         <path
