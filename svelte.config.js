@@ -10,7 +10,9 @@ export default {
 		alias: {
 			'~/*': "./src/components/*"
 		},
-		adapter: adapter()
+		adapter: adapter({
+			// fallback: 'index.html'
+		})
 	},
 	onwarn: (warning, handler) => {
 		if (warning.message.includes("a11y")) return;
