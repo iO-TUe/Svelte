@@ -9,7 +9,7 @@
     <!-- {console.log("Render: App") ?? ""} -->
     <Header />
     <main class="App-main">
-        <Counter initialValue={80} maxValue={12} recurse={true} />
+        <Counter initialValue={80} maxValue={10} recurse={true} />
     </main>
 </div>
 
