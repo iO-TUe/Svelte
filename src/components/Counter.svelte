@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
     import Button from "./button.svelte";
     import Gauge from "./gauge.svelte";
 
@@ -15,6 +17,15 @@
     function add() {
         if (count < 100) count++;
     }
+
+    onMount(() => {
+        if (browser) {
+            const delay = Date.now() + 50;
+            while (Date.now() < delay) {
+                console.log();
+            }
+        }
+    });
 
     // console.log("Script: Counter");
 </script>

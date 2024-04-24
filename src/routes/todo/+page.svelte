@@ -6,17 +6,13 @@
 
     let id = 0;
     let items: { id: number; text: string }[] = [];
-    let input = "";
-    let i: HTMLInputElement;
+    let input: HTMLInputElement;
 
-    onMount(() => {
-        i!.disabled = false;
-    });
-
-    function addItem({ key }: KeyboardEvent) {
-        if (key === "Enter" && input) {
-            items.push({ id: id++, text: input });
-            input = "";
+    function addItem({ key, target }: KeyboardEvent) {
+        let el = target as HTMLInputElement;
+        if (key === "Enter" && el.value) {
+            items.push({ id: id++, text: el.value });
+            el.value = "";
             items = items;
         }
     }
@@ -24,6 +20,10 @@
     function removeItem(ev: CustomEvent) {
         items = items.filter(({ id }) => id !== ev.detail.id);
     }
+
+    onMount(() => {
+        input!.disabled = false;
+    });
 
     // console.log("Script: App");
 </script>
@@ -38,8 +38,7 @@
                 <input
                     disabled
                     id="input"
-                    bind:this={i}
-                    bind:value={input}
+                    bind:this={input}
                     on:keyup={addItem}
                 />
             </label>
@@ -50,7 +49,7 @@
             </ul>
         </section>
         <section id="counters">
-            <Counter initialValue={50} maxValue={500} recurse={false} />
+            <Counter initialValue={50} maxValue={5} recurse={false} />
         </section>
     </main>
 </div>
@@ -74,6 +73,10 @@
 
     .list {
         padding-inline-start: 0;
+    }
+
+    #counters {
+        height: 10vh;
     }
 
     #counters :global(.counters) {
