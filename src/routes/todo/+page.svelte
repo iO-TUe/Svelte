@@ -1,18 +1,15 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import Counter from "~/counter.svelte";
+    import Counter from "~/counter.gen.svelte";
     import Header from "~/header.svelte";
     import Item from "~/item.svelte";
 
     let id = 0;
     let items: { id: number; text: string }[] = [];
-    let input: HTMLInputElement;
 
     function addItem({ key, target }: KeyboardEvent) {
-        let el = target as HTMLInputElement;
-        if (key === "Enter" && el.value) {
-            items.push({ id: id++, text: el.value });
-            el.value = "";
+        if (key === "Enter" && (target as HTMLInputElement).value) {
+            items.push({ id: id++, text: (target as HTMLInputElement).value });
+            (target as HTMLInputElement).value = "";
             items = items;
         }
     }
@@ -20,11 +17,6 @@
     function removeItem(ev: CustomEvent) {
         items = items.filter(({ id }) => id !== ev.detail.id);
     }
-
-    onMount(() => {
-        input!.disabled = false;
-    });
-
     // console.log("Script: App");
 </script>
 
@@ -35,12 +27,7 @@
         <section id="todo">
             <label>
                 <h2>Add new item</h2>
-                <input
-                    disabled
-                    id="input"
-                    bind:this={input}
-                    on:keyup={addItem}
-                />
+                <input id="input" on:keyup={addItem} />
             </label>
             <ul class="list">
                 {#each items as item (item.id)}
