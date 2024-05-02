@@ -7,9 +7,9 @@
     let items: { id: number; text: string }[] = [];
 
     function addItem({ key, target }: KeyboardEvent) {
-        if (key === "Enter" && (target as HTMLInputElement).value) {
-            items.push({ id: id++, text: (target as HTMLInputElement).value });
-            (target as HTMLInputElement).value = "";
+        if (key === "Enter" && (<HTMLInputElement>target).value) {
+            items.push({ id: id++, text: (<HTMLInputElement>target).value });
+            (<HTMLInputElement>target).value = "";
             items = items;
         }
     }
@@ -17,7 +17,12 @@
     function removeItem(ev: CustomEvent) {
         items = items.filter(({ id }) => id !== ev.detail.id);
     }
-    // console.log("Script: App");
+    // consol`${amble[0] ?? ''}
+${duplicate((i) => `import ${comp.toUpperCase()}${i} from './${comp}/${comp}${i}${ext != 'tsx' ? `.${ext}` : ''}'`)}
+
+${component}${amble[1] ?? ' '}${tags[0]}
+  ${duplicate((i) => `<${comp.toUpperCase()}${i} ${props} />`)}
+${tags[1]}`e.log("Script: App");
 </script>
 
 <div class="App">
